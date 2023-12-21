@@ -4,12 +4,9 @@ const solution = (s) => {
   // 값이 1이 되었을 때 멈추기
   while (s != 1) {
     for (const e of s) {
-      if (e == 0) {
-        cntZero++;  // 다시 0을 세서 어디에 저장시키기
-      }
+      e == 0 ? cntZero++ : '';
     }
-    s = s.replace(/0/g, ''); // 0 제거
-    s = s.length.toString(2); // x를 다시 2진수로 변환
+    s = s.replace(/0/g, '').length.toString(2); // 0 제거 g후 다시 2진수로 변환
     cnt++;
   }
   return [cnt, cntZero];
